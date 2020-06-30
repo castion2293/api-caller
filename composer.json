@@ -1,0 +1,47 @@
+{
+  "name": "super-platform/api-caller",
+  "description": "Api Caller",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Liao San Kai",
+      "email": "liaosankai@js-tech.tw"
+    }
+  ],
+  "require": {
+    "php": "^7.1.3",
+    "guzzlehttp/guzzle": "^6.3",
+    "ext-json": "*",
+    "chaoyenpo/sign-code": "^0.0.8",
+    "ext-openssl": "*",
+    "php-http/message": "^1.7"
+  },
+  "require-dev": {
+    "vlucas/phpdotenv": "~2.0",
+    "phpunit/phpunit": "^7",
+    "orchestra/testbench": "3.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SuperPlatform\\ApiCaller\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SuperPlatform\\ApiCaller\\Tests\\": "tests/"
+    },
+    "classmap": [
+      "tests/"
+    ]
+  },
+  "minimum-stability": "stable",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SuperPlatform\\ApiCaller\\ApiCallerServiceProvider"
+      ],
+      "aliases": {
+      }
+    }
+  }
+}

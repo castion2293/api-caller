@@ -1,0 +1,25 @@
+{
+  "name": "api-caller",
+  "version": "1.27.4",
+  "description": "因為是私有版控庫，安裝此 package 的專案必需在自己的 composer.json 先定義版控庫來源",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "br-release": "standard-version && VERSION=`awk '/\"version\"/{gsub(/(\"|\",)/,\"\",$2);print $2};' package.json` && git checkout -b $VERSION",
+    "br-push": "VERSION=`awk '/\"version\"/{gsub(/(\"|\",)/,\"\",$2);print $2};' package.json` && git push --set-upstream origin $VERSION && git push --tags",
+    "br-release-auto": "npm run br-release && npm run br-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.sp168.cc:super-platform/laravel-package/api-caller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard-version": "^4.4.0"
+  }
+}
